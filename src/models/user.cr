@@ -10,6 +10,9 @@ class User < Granite::ORM::Base
   has_many :followers
   has_many :artists, through: followers
 
+  has_many :listeners
+  has_many :playlists, through: listeners
+
   primary id : Int64
   field email : String
   field hashed_password : String

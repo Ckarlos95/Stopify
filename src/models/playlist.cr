@@ -6,6 +6,9 @@ class Playlist < Granite::ORM::Base
   has_many :included_songs
   has_many :songs, through: included_songs
 
+  has_many :listeners
+  has_many :users, through: listeners
+
   table_name playlists
 
   # id : Int64 primary key is created for you
