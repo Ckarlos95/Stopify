@@ -1,0 +1,22 @@
+{
+  "name": "stopify",
+  "description": "Stopify with Amber",
+  "main": "stopify",
+  "authors": [
+    "Carlos"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "music",
+    "data-minig"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/dist/bower_components",
+    "test",
+    "tests"
+  ]
+}
