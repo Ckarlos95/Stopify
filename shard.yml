@@ -1,0 +1,43 @@
+name: stopify
+version: 0.1.0
+
+authors:
+  - Carlos <ckarlos_95@hotmail.es>
+
+crystal: 0.24.1
+
+license: UNLICENSED
+
+targets:
+  stopify:
+    main: src/stopify.cr
+
+  amber:
+    main: lib/amber/src/amber/cli.cr
+
+dependencies:
+  amber:
+    github: amberframework/amber
+    version: 0.6.7
+    #branch: master
+
+  granite_orm:
+    github: amberframework/granite-orm
+    version: ~> 0.8.2
+
+  quartz_mailer:
+    github: amberframework/quartz-mailer
+    version: ~> 0.5.0
+
+  jasper_helpers:
+    github: amberframework/jasper-helpers
+    version: ~> 0.1.6
+
+  mysql:
+    github: crystal-lang/crystal-mysql
+    version: ~> 0.4.0
+
+development_dependencies:
+  garnet_spec:
+    github: amberframework/garnet-spec
+    version: ~> 0.1.1
