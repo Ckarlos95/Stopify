@@ -5,8 +5,7 @@ class Album < Granite::ORM::Base
   has_many :artists, through: releases
 
   table_name albums
-
-
+  
   # id : Int64 primary key is created for you
   field name : String
   field year : Int32
