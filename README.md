@@ -1,5 +1,6 @@
 # stopify
 
+Proyecto de Minería de Datos
 This project is powered by [Amber Framework](https://amberframework.org/).
 
 ## Installation
@@ -50,7 +51,7 @@ docker-compose logs -f
 
 ## Contributing
 
-1. Fork it ( https://github.com/your-github-user/stopify/fork )
+1. Fork it ( https://github.com/Ckarlos95/stopify/fork )
 2. Create your feature branch (git checkout -b my-new-feature)
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
@@ -58,4 +59,4 @@ docker-compose logs -f
 
 ## Contributors
 
-- [your-github-user](https://github.com/your-github-user) Carlos - creator, maintainer
+- [Ckarlos95](https://github.com/Ckarlos95) Carlos Aguilera - creator, maintainer
