@@ -1,7 +1,7 @@
 -- +micrate Up
 CREATE TABLE countries (
   id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(255) NOT NULL,
+  name VARCHAR(255) UNIQUE NOT NULL,
   created_at TIMESTAMP NULL,
   updated_at TIMESTAMP NULL
 );

@@ -4,6 +4,9 @@ require "crypto/bcrypt/password"
 class User < Granite::ORM::Base
   include Crypto
   adapter mysql
+
+  belongs_to :country
+
   primary id : Int64
   field email : String
   field hashed_password : String
@@ -11,7 +14,6 @@ class User < Granite::ORM::Base
   field birthday : Time
   field gender : Int32
   field role : Int32
-  field country : Int64
   timestamps
 
   validate :email, "is required", -> (user : User) do
