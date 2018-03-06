@@ -27,3 +27,24 @@ if carlos.save
 else
   puts "Could not save user!"
 end
+
+p = Playlist.new
+p.name = "tugfa"
+c = User.find_by :email, "ckarlos_95@hotmail.es"
+if c
+  puts "User found! :)"
+  p.user = c
+else
+  puts "User not found :("
+end
+
+if p.save
+  puts "Playlist saved!"
+else
+  puts "Could not save playlist"
+end
+
+c = User.find_by :email, "ckarlos_95@hotmail.es"
+if c
+  pp c.created_playlists
+end

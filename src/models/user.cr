@@ -13,6 +13,8 @@ class User < Granite::ORM::Base
   has_many :listeners
   has_many :playlists, through: listeners
 
+  has_many_as :created_playlists, alias_for: :playlists
+
   primary id : Int64
   field email : String
   field hashed_password : String
