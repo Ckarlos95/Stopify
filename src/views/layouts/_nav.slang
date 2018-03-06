@@ -6,3 +6,5 @@ a class="nav-item #{active}" href="/artists" Artists
 a class="nav-item #{active}" href="/albums" Albums
 - active = context.request.path == "/songs" ? "active" : ""
 a class="nav-item #{active}" href="/songs" Songs
+- active = context.request.path == "/playlists" ? "active" : ""
+a class="nav-item #{active}" href="/playlists" Playlists
