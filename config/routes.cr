@@ -28,6 +28,7 @@ Amber::Server.configure do |app|
   end
 
   routes :web do
+      resources "/albums", AlbumController
       resources "/artists", ArtistController
     get "/", HomeController, :index
   end
