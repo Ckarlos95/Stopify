@@ -7,6 +7,9 @@ class User < Granite::ORM::Base
 
   belongs_to :country
 
+  has_many :followers
+  has_many :artists, through: followers
+
   primary id : Int64
   field email : String
   field hashed_password : String
