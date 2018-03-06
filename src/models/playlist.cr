@@ -1,8 +1,12 @@
 class Playlist < Granite::ORM::Base
   adapter mysql
-  table_name playlists
 
   belongs_to :user
+
+  has_many :included_songs
+  has_many :songs, through: included_songs
+
+  table_name playlists
 
   # id : Int64 primary key is created for you
   field name : String
