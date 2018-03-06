@@ -1,5 +1,9 @@
 class Album < Granite::ORM::Base
   adapter mysql
+
+  has_many :releases
+  has_many :artists, through: releases
+
   table_name albums
 
 
