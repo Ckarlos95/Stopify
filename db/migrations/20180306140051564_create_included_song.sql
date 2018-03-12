@@ -1,6 +1,6 @@
 -- +micrate Up
 CREATE TABLE included_songs (
-  id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   playlist_id BIGINT,
   song_id BIGINT,
   created_at TIMESTAMP NULL,

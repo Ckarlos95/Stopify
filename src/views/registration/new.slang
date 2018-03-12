@@ -11,6 +11,8 @@ form action="/registration" method="post"
     input.form-control type="email" name="email" placeholder="Email"
   .form-group
     input.form-control type="password" name="password" placeholder="Password"
+  .form-group
+    
   button.btn.btn-primary.btn-xs type="submit"
     | Register
 <hr/>

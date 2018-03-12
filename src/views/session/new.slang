@@ -7,10 +7,10 @@ h1 Sign In
 
 form action="/session" method="post"
   == csrf_tag
-  div.form-group
-    input.form-control type="email" name="email" placeholder="Email"
-  div.form-group
-    input.form-control type="password" name="password" placeholder="Password"
+  .form-group
+    input type="email" name="email" placeholder="Email"
+  .form-group
+    input type="password" name="password" placeholder="Password"
   button.btn.btn-primary.btn-xs type="submit" Sign In
-<hr/>
+hr
 == link_to("Don't have an account yet?", "/signup")

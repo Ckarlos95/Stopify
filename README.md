@@ -1,6 +1,6 @@
 # stopify
 
-Proyecto de Minería de Datos
+Proyecto de Minería de Datos.
 This project is powered by [Amber Framework](https://amberframework.org/).
 
 ## Installation
