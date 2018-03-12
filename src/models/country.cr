@@ -1,5 +1,9 @@
 class Country < Granite::ORM::Base
   adapter mysql
+
+  has_many :users
+  has_many :artists
+
   table_name countries
 
 

@@ -12,7 +12,17 @@ form action="/registration" method="post"
   .form-group
     input.form-control type="password" name="password" placeholder="Password"
   .form-group
-    
+    input.form-control type="text" name="name" placeholder="Name"
+  .form-group
+    input.form-control type="date" name="birthday" placeholder="Birthday"
+  .form-group
+    input.form-control type="number" name="gender"
+  .form-group
+    select.form-control name="country"
+      option disabled="true" value=""
+      - Country.all.each do |country|
+        option value=country.id = country.name
+
   button.btn.btn-primary.btn-xs type="submit"
     | Register
 <hr/>
