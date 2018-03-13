@@ -9,7 +9,7 @@ CREATE TABLE users (
   -- gender: 0 is for unknown gender as of ISO/IEC 5218
   role INT UNSIGNED NOT NULL DEFAULT 2,
   -- role: 2 is for normal user
-  country_id BIGINT,
+  country_id BIGINT UNSIGNED,
   created_at TIMESTAMP NULL,
   updated_at TIMESTAMP NULL
 );

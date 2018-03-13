@@ -1,8 +1,8 @@
 -- +micrate Up
 CREATE TABLE followers (
   id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  user_id BIGINT,
-  artist_id BIGINT,
+  user_id BIGINT UNSIGNED,
+  artist_id BIGINT UNSIGNED,
   created_at TIMESTAMP NULL,
   updated_at TIMESTAMP NULL
 );

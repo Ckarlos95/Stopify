@@ -1,8 +1,8 @@
 -- +micrate Up
 CREATE TABLE releases (
   id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  artist_id BIGINT,
-  album_id BIGINT,
+  artist_id BIGINT UNSIGNED,
+  album_id BIGINT UNSIGNED,
   created_at TIMESTAMP NULL,
   updated_at TIMESTAMP NULL
 );

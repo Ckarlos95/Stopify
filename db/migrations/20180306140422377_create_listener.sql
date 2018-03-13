@@ -1,8 +1,8 @@
 -- +micrate Up
 CREATE TABLE listeners (
   id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  user_id BIGINT,
-  playlist_id BIGINT,
+  user_id BIGINT UNSIGNED,
+  playlist_id BIGINT UNSIGNED,
   created_at TIMESTAMP NULL,
   updated_at TIMESTAMP NULL
 );

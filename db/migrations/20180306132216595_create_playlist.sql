@@ -5,7 +5,7 @@ CREATE TABLE playlists (
   description TEXT,
   duration TIME DEFAULT "00:00:00",
   image VARCHAR(255),
-  user_id BIGINT,
+  user_id BIGINT UNSIGNED,
   created_at TIMESTAMP NULL,
   updated_at TIMESTAMP NULL
 );

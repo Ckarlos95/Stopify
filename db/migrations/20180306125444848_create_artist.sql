@@ -3,7 +3,7 @@ CREATE TABLE artists (
   id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(255),
   biography TEXT,
-  country_id BIGINT,
+  country_id BIGINT UNSIGNED,
   created_at TIMESTAMP NULL,
   updated_at TIMESTAMP NULL
 );

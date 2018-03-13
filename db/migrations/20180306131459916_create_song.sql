@@ -4,7 +4,7 @@ CREATE TABLE songs (
   name VARCHAR(255) NOT NULL,
   duration TIME DEFAULT "00:00:00",
   plays INT DEFAULT 0,
-  disc_id BIGINT,
+  disc_id BIGINT UNSIGNED,
   created_at TIMESTAMP NULL,
   updated_at TIMESTAMP NULL
 );
