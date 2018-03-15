@@ -18,5 +18,10 @@
     "public/dist/bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "bulma": "^0.6.2",
+    "vue": "^2.5.15"
+  }
 }

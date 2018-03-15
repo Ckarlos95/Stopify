@@ -1,11 +1,16 @@
 const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+var glob = require('glob');
 
 let config = {
   entry: {
     'main.bundle.js': './src/assets/javascripts/main.js',
-    'main.bundle.css': './src/assets/stylesheets/main.scss'
+    'main.bundle.css': './src/assets/stylesheets/main.scss',
+    'registration.bundle.js': './src/assets/javascripts/registration.coffee'
+    // 'javascripts': glob.sync('./src/assets/javascripts/*.js'),
+    // 'stylesheets': glob.sync('./src/assets/stylesheets/*.scss')
+
   },
   output: {
     filename: '[name]',
@@ -34,6 +39,11 @@ let config = {
           fallback: 'style-loader',
           use: ['css-loader', 'sass-loader']
         })
+      },
+      {
+        test: /\.coffee$/,
+        exclude: /node_modules/,
+        use: ['coffee-loader']
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
