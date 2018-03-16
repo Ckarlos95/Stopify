@@ -26,5 +26,5 @@ html
             == content
 
     /! JQuery
-    script src="/dist/bower_components/jquery/dist/jquery.slim.min.js"
+    / script src="/dist/bower_components/jquery/dist/jquery.slim.min.js"
     script src="/dist/main.bundle.js"

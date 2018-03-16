@@ -5,12 +5,20 @@
 
 == form(action: "/artists/#{artist.id.to_s}", method: artist.id ? :patch : :post) do
   == csrf_tag
-  div.form-group
-    == text_field(name: "name", value: artist.name, placeholder: "Name", class: "form-control")
-  div.form-group
-    == text_area(name: "biography", content: artist.biography, placeholder: "Biography", class: "form-control", size: "30x10")
-  div.form-group
-    == label(:country)
-    == select_field(name: "country_id", collection: Country.all.map{|country| [country.id, country.id]}, selected: artist.country_id, class: "form-control")
-  == submit("Submit", class: "btn btn-primary btn-xs")
+  .field
+    label.label Name
+    .control
+      == text_field(name: "name", value: artist.name, placeholder: "The artist name", class: "input")
+  .field
+    label.label Biography
+    .control
+    == text_area(name: "biography", content: artist.biography, placeholder: "Write a short description/history about this artist", class: "textarea")
+  .field
+    == label(:country, class: "label")
+    .control
+      .select
+        == select_field(name: "country_id", collection: Country.all.map{|country| [country.id, country.name]}, selected: artist.country_id)
+  br
+  .has-text-centered
+    == submit("Submit", class: "button is-link is-outlined is-medium is-rounded")
   == link_to("back", "/artists", class: "btn btn-default btn-xs")
