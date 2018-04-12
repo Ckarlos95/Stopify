@@ -2,6 +2,13 @@ require "granite_orm/adapter/mysql"
 require "crypto/bcrypt/password"
 
 class User < Granite::ORM::Base
+  macro has_many_as(alias_name, alias_for)
+    has_many alias_for
+    def {{alias_name.id}}
+      {{alias_for.id}}
+    end
+  end
+
   include Crypto
   adapter mysql
 
