@@ -50,6 +50,9 @@ Amber::Server.configure do |app|
 
   routes :web, "/admin" do
     get "/dashboard", AdminController, :dashboard
+    get "/databases", AdminController, :databases
+    get "/tables", AdminController, :tables
+    get "/table_desc", AdminController, :table_desc
   end
   #
   # routes :web, "/artist/albums/:album_id" do

@@ -60,7 +60,7 @@
             .field
               .control
                 .select
-                  select name="country"
+                  select name="country_id"
                     - Country.all.each do |country|
                       option value=country.id = country.name
         br

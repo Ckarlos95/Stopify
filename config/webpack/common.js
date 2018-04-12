@@ -7,7 +7,8 @@ let config = {
   entry: {
     'main.bundle.js': './src/assets/javascripts/main.js',
     'main.bundle.css': './src/assets/stylesheets/main.scss',
-    'registration.bundle.js': './src/assets/javascripts/registration.coffee'
+    'registration.bundle.js': './src/assets/javascripts/registration.coffee',
+    'admin_dashboard.bundle.js': './src/assets/javascripts/admin_dashboard.coffee'
     // 'javascripts': glob.sync('./src/assets/javascripts/*.js'),
     // 'stylesheets': glob.sync('./src/assets/stylesheets/*.scss')
 

@@ -16,7 +16,8 @@
       | Sign Out
     - active = context.request.path == "/profile" ? "is-active" : ""
     a class="navbar-item #{active} pull-right" href="/profile"
-      == current_user.email
+      span.has-text-weight-bold == current_user.name
+      | : #{current_user.email}
   - else
     - active = context.request.path == "/signup" ? "is-active" : ""
     a class="navbar-item #{active} pull-right" href="/signup"

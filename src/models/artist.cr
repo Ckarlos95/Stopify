@@ -12,7 +12,7 @@ class Artist < Granite::ORM::Base
   has_many :discs
 
   table_name artists
-  
+
   # id : Int64 primary key is created for you
   field name : String
   field biography : String

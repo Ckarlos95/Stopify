@@ -20,5 +20,6 @@
         == select_field(name: "country_id", collection: Country.all.map{|country| [country.id, country.name]}, selected: artist.country_id)
   br
   .has-text-centered
-    == submit("Submit", class: "button is-link is-outlined is-medium is-rounded")
-  == link_to("back", "/artists", class: "btn btn-default btn-xs")
+    == submit("Done", class: "button is-link is-outlined is-medium is-rounded")
+
+== link_to("back", "/artists", class: "button is-info is-inverted")

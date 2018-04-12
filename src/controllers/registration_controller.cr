@@ -6,7 +6,7 @@ class RegistrationController < ApplicationController
 
   def create
     user = User.new(registration_params.validate!)
-    country = Country.find params["country"].to_i
+    country = Country.find params["country_id"].to_i
     if country
       user.country = country
     end
@@ -32,7 +32,7 @@ class RegistrationController < ApplicationController
       required(:name) { |f| !f.nil? }
       required(:birthday) { |f| !f.nil? }
       required(:gender) { |f| !f.nil? }
-      required(:country) { |f| !f.nil? }
+      required(:country_id) { |f| !f.nil? }
     end
   end
 end

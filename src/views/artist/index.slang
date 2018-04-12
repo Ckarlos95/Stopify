@@ -16,7 +16,7 @@ div.table-responsive
         tr
           td = artist.name
           td = artist.biography
-          td = artist.country.id
+          td = artist.country.name
           td
             span
               == link_to("read", "/artists/#{artist.id}", class: "btn btn-success btn-xs")
