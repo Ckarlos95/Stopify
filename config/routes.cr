@@ -39,6 +39,7 @@ Amber::Server.configure do |app|
     get "/signout", SessionController, :delete
     get "/signup", RegistrationController, :new
     post "/registration", RegistrationController, :create
+    # get "/artist/:id/albums", AlbumController, :index
     resources "/playlists", PlaylistController
     resources "/songs", SongController
     resources "/albums", AlbumController
@@ -46,4 +47,12 @@ Amber::Server.configure do |app|
     get "/", SessionController, :new
     # get "/", HomeController, :index
   end
+
+  routes :web, "/admin" do
+    get "/dashboard", AdminController, :dashboard
+  end
+  #
+  # routes :web, "/artist/albums/:album_id" do
+  #   resources "/songs", SongController
+  # end
 end
