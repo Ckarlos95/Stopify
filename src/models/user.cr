@@ -2,6 +2,19 @@ require "granite_orm/adapter/mysql"
 require "crypto/bcrypt/password"
 
 class User < Granite::ORM::Base
+  # defines method for a relationship with an alias
+  macro has_many_as(children_table, alias_for)
+    def {{children_table.id}}
+      {% children_class = alias_for.id[0...-1].camelcase %}
+      {% name_space = @type.name.gsub(/::/, "_").downcase.id %}
+      {% table_name = SETTINGS[:table_name] || name_space + "s" %}
+      return [] of {{children_class}} unless id
+      foreign_key = "{{alias_for.id}}.{{table_name[0...-1]}}_id"
+      query = "WHERE #{foreign_key} = ?"
+      {{children_class}}.all(query, id)
+    end
+  end
+
   include Crypto
   adapter mysql
 
@@ -57,9 +70,6 @@ class User < Granite::ORM::Base
   def authenticate(password : String)
     (bcrypt_pass = self.password) ? bcrypt_pass == password : false
   end
-
-  # def admin?
-  # end
 
   private getter new_password : String?
 end
