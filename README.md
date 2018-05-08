@@ -4,13 +4,14 @@ Proyecto de Minería de Datos.
 This project is powered by [Amber Framework](https://amberframework.org/).
 
 ## Instrucciones
+
 1. Instalar [Crystal](https://crystal-lang.org/):
   ```
   curl https://dist.crystal-lang.org/apt/setup.sh | sudo bash
   sudo apt-get install crystal
   ```
   Más info [aquí](https://crystal-lang.org/docs/installation/on_debian_and_ubuntu.html).
-
+  
 2. Instalar [Amber](https://amberframework.org/):
   * Tener instaladas las dependencias
     - Git: `sudo apt-get install git`
@@ -39,16 +40,15 @@ This project is powered by [Amber Framework](https://amberframework.org/).
     ```
     amber -v
     ```
-
   Más info [aquí](https://amberframework.org/guides/getting-started/Installation/README.md#installation).
-
+  
 3. Clonar el proyecto e instalar las dependencias
   ```
   git clone https://github.com/Ckarlos95/Stopify.git
   cd Stopify/
   shards install
   ```
-
+  
 4. Modificar la entrada `database_url` del archivo `config/environments/development.yml` como sigue:
   > database_url: mysql://**tu_usuario**:**contraseña**@localhost:3306/stopify_development
 
@@ -58,12 +58,20 @@ This project is powered by [Amber Framework](https://amberframework.org/).
   ```
   amber db create migrate
   ```
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 36b3ed2012c033208aa0b8c97f2dd722ec29a0b0
 6. Iniciar el servidor
   ```
   amber w
   ```
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 36b3ed2012c033208aa0b8c97f2dd722ec29a0b0
 7. Abrir el navegador en `http://localhost:3000/`
   * En caso de obtener un error al intentar iniciar sesión (la sesión no inicia aunque los datos sean correctos) intentar iniciar sesión con un correo que no esté registrado hasta que aparezca un mensaje de error, entonces iniciar sesión con los datos correctos.
 
