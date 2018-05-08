@@ -54,34 +54,17 @@ This project is powered by [Amber Framework](https://amberframework.org/).
 
   El usuario deberá tener los permisos necesarios para crear bases, tablas, etc.
 
-5. Editar el archivo `lib/granite_orm/src/granite_orm/associations.cr` y agregar lo siguiente dentro del modulo `Granite::ORM::Associations`
-
-  ```crystal
-  # defines method for a relationship with an alias
-  macro has_many_as(children_table, alias_for)
-    def {{children_table.id}}
-      {% children_class = alias_for.id[0...-1].camelcase %}
-      {% name_space = @type.name.gsub(/::/, "_").downcase.id %}
-      {% table_name = SETTINGS[:table_name] || name_space + "s" %}
-      return [] of {{children_class}} unless id
-      foreign_key = "{{alias_for.id}}.{{table_name[0...-1]}}_id"
-      query = "WHERE #{foreign_key} = ?"
-      {{children_class}}.all(query, id)
-    end
-  end
-  ```
-
-6. Crear la base de datos y correr las migraciones
+5. Crear la base de datos y correr las migraciones
   ```
   amber db create migrate
   ```
 
-7. Iniciar el servidor
+6. Iniciar el servidor
   ```
   amber w
   ```
 
-8. Abrir el navegador en `http://localhost:3000/`
+7. Abrir el navegador en `http://localhost:3000/`
   * En caso de obtener un error al intentar iniciar sesión (la sesión no inicia aunque los datos sean correctos) intentar iniciar sesión con un correo que no esté registrado hasta que aparezca un mensaje de error, entonces iniciar sesión con los datos correctos.
 
 ## Installation

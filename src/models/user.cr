@@ -2,6 +2,19 @@ require "granite_orm/adapter/mysql"
 require "crypto/bcrypt/password"
 
 class User < Granite::ORM::Base
+  # defines method for a relationship with an alias
+  macro has_many_as(children_table, alias_for)
+    def {{children_table.id}}
+      {% children_class = alias_for.id[0...-1].camelcase %}
+      {% name_space = @type.name.gsub(/::/, "_").downcase.id %}
+      {% table_name = SETTINGS[:table_name] || name_space + "s" %}
+      return [] of {{children_class}} unless id
+      foreign_key = "{{alias_for.id}}.{{table_name[0...-1]}}_id"
+      query = "WHERE #{foreign_key} = ?"
+      {{children_class}}.all(query, id)
+    end
+  end
+
   include Crypto
   adapter mysql
 
@@ -10,10 +23,11 @@ class User < Granite::ORM::Base
   has_many :followers
   has_many :artists, through: followers
 
+  has_many_as :created_playlists, alias_for: :playlists
+
   has_many :listeners
   has_many :playlists, through: listeners
 
-  has_many_as :created_playlists, alias_for: :playlists
 
   primary id : Int64
   field email : String
